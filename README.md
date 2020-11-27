@@ -4,7 +4,7 @@
 
 - Install nodejs
 
-- Install Angular CLI `npm install -g @angular/cli
+- Install dependencies from project dir `npm install`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
