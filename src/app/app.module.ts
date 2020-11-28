@@ -14,6 +14,7 @@ import { SplashComponent } from './splash/splash.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { RouterModule, Routes } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
+import { ResultComponent } from './result/result.component';
 
 
 const routes = [
@@ -28,6 +29,7 @@ const routes = [
     JournalComponent,
     MedicineComponent,
     SplashComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

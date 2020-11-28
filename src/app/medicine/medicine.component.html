@@ -4,11 +4,11 @@
         <label><b>{{name}}</b></label>
     </div>
     <div>
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle [checked]=this.selectNo [disabled]=this.disableNo value="bold">No</mat-button-toggle>
-            <mat-button-toggle [disabled]=this.disableDown value="italic">Down</mat-button-toggle>
-            <mat-button-toggle [checked]=this.selectSteady [disabled]=this.disableSteady value="underline">Steady</mat-button-toggle>
-            <mat-button-toggle [disabled]=this.disableUp value="underline">Up</mat-button-toggle>
+        <mat-button-toggle-group [value]=dosis name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle (change)="clickedSelection($event.value)" value="No" [disabled]="disableNo">No</mat-button-toggle>
+            <mat-button-toggle (change)="clickedSelection($event.value)" value="Down" [disabled]="disableDown">Down</mat-button-toggle>
+            <mat-button-toggle (change)="clickedSelection($event.value)" value="Steady" [disabled]="disableSteady">Steady</mat-button-toggle>
+            <mat-button-toggle (change)="clickedSelection($event.value)" value="Up" [disabled]="disableUp">Up</mat-button-toggle>
         </mat-button-toggle-group>
     </div>
     

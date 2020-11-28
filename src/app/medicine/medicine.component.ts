@@ -1,5 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-medicine',
@@ -8,15 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MedicineComponent implements OnInit {
   @Input() name: string;
+
   @Input() dosis: string;
+  @Output() dosisChange = new EventEmitter<string>();
+
+  selected: string = "No";
 
   disableNo: boolean;
   disableDown: boolean;
   disableSteady: boolean;
   disableUp: boolean;
-
-  selectNo: boolean;
-  selectSteady: boolean;
 
   constructor() {
    }
@@ -29,22 +29,23 @@ export class MedicineComponent implements OnInit {
     this.setMedicineFields(this.dosis);
   }
 
+  public clickedSelection(dosis): void {
+    this.dosis = dosis;
+    this.dosisChange.emit(dosis);
+  }
+
   private setMedicineFields(dosis: string): void {
     if (dosis == "No") {
       this.disableNo = false;
       this.disableDown = true;
       this.disableSteady = true;
       this.disableUp = false;
-      this.selectNo = true;
-      this.selectSteady = false;
     }
     else {
       this.disableNo = true;
       this.disableDown = false;
       this.disableSteady = false;
       this.disableUp = false;
-      this.selectNo = false;
-      this.selectSteady = true;
     }
   }
 }
