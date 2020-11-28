@@ -20,6 +20,7 @@ import { ResultComponent } from './result/result.component';
 const routes = [
   { path: '', component: SplashComponent },
   { path: 'play', component: GameComponent },
+  { path: 'results/:score', component: ResultComponent}
 ]
 
 @NgModule({

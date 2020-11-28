@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { MedicineComponent } from '../medicine/medicine.component';
 import { Patient } from '../patient';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
+import { ScoreService } from '../score.service';
 
 @Component({
   selector: 'app-journal',
@@ -16,7 +18,7 @@ export class JournalComponent implements OnInit {
 
   private url: string = "http://127.0.0.1:5000/api/predict";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router, private scoreService: ScoreService) {
     this.prescriptionPosted$.subscribe(prediction => {this.predictionReceived(prediction)});
 
   }
@@ -58,6 +60,7 @@ export class JournalComponent implements OnInit {
     this.patient = this.patients[Math.floor(Math.random() * Math.floor(8))];
     this.oldPatient = JSON.parse(JSON.stringify(this.patient));
     this.resetFields();
+    this.router.navigateByUrl("/results/" + this.scoreService.score.toString())
   }
 
   private predictionReceived(prediction: number) {

@@ -10,4 +10,6 @@ export class ScoreService {
   constructor() { 
     this.score = 0;
   }
+
+  
 }
