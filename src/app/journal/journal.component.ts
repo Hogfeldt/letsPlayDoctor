@@ -52,7 +52,7 @@ export class JournalComponent implements OnInit {
     this.http.post(this.url, {
       patient
     }).subscribe(predictionJSON => {
-    const prediction = 42;
+    const prediction = predictionJSON["prediction"];
       this.prescriptionPostedSource.next(prediction);
     })
 
@@ -60,11 +60,11 @@ export class JournalComponent implements OnInit {
     this.patient = this.patients[Math.floor(Math.random() * Math.floor(8))];
     this.oldPatient = JSON.parse(JSON.stringify(this.patient));
     this.resetFields();
-    this.router.navigateByUrl("/results/" + this.scoreService.score.toString())
   }
 
   private predictionReceived(prediction: number) {
     console.log(prediction);
+    this.router.navigateByUrl("/results/" + prediction)
   }
 
 
