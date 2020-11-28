@@ -4,7 +4,7 @@ export interface Patient {
     name: string,
     race: string,
     gender: string,
-    age: number,
+    age: string,
     time_in_hospital: number,
     num_lab_procedures: number,
     num_procedures: number,
