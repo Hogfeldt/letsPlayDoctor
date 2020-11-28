@@ -14,7 +14,7 @@ export class JournalComponent implements OnInit {
   private prescriptionPostedSource: Subject<number> = new Subject<number>();
   public prescriptionPosted$ = this.prescriptionPostedSource.asObservable();
 
-  private url: string = "api/predict";
+  private url: string = "http://127.0.0.1:5000/api/predict";
 
   constructor(private http: HttpClient) {
     this.prescriptionPosted$.subscribe(prediction => {this.predictionReceived(prediction)});
