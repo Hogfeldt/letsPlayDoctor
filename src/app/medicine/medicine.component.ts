@@ -22,7 +22,7 @@ export class MedicineComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.setMedicineFields(this.dosis);    
+    this.setMedicineFields(this.dosis);
   }
 
   public resetField(): void {

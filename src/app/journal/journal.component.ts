@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { MedicineComponent } from '../medicine/medicine.component';
 import { Patient } from '../patient';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-journal',
@@ -8,6 +11,16 @@ import { Patient } from '../patient';
   styleUrls: ['./journal.component.css']
 })
 export class JournalComponent implements OnInit {
+  private prescriptionPostedSource: Subject<number> = new Subject<number>();
+  public prescriptionPosted$ = this.prescriptionPostedSource.asObservable();
+
+  private url: string = "http://127.0.0.1:5000/predict";
+
+  constructor(private http: HttpClient) {
+    this.prescriptionPosted$.subscribe(prediction => {this.predictionReceived(prediction)});
+
+  }
+
   patients: Array<Patient> = [
     {name: "John", age: 60, gender: "Female", race: "Caucasian", time_in_hospital: 3, number_outpatient: 0, number_emergency: 1, number_inpatient: 1, number_diagnoses: 9, max_glu_serum: "None", A1Cresult: "None", metformin: "No", repaglinide: "No", nateglinide: "No", chlorpropamide: "No", glimepiride: "No", acetohexamide: "No", glipizide: "No", glyburide: "Steady", tolbutamide: "No", pioglitazone: "No", rosiglitazone: "No", acarbose: "No", miglitol: "No",troglitazone: "No", tolazamide: "No", examide: "No", citoglipton: "No", insulin: "No", glyburide_metformin: "No", glipizide_metformin: "No", glimepiride_pioglitazone: "No", metformin_rosiglitazone: "No", metformin_pioglitazone: "No", change: "No", diabetesMed: "Yes", readmitted: "<30", _diag_1: "Supplemental classification", _diag_2: "Diseases of the skin and subcutaneous tissue", _diag_3: "Endocrine, nutritional, and metabolic diseases and immunity disorders, without diabetes"},
     {name: "John", age: 50, gender: "Male", race: "Caucasian", time_in_hospital: 5, number_outpatient: 0, number_emergency: 0, number_inpatient: 0, number_diagnoses: 3, max_glu_serum: "None", A1Cresult: "None", metformin: "No", repaglinide: "No", nateglinide: "No", chlorpropamide: "No", glimepiride: "No", acetohexamide: "No", glipizide: "No", glyburide: "No", tolbutamide: "No", pioglitazone: "No", rosiglitazone: "No", acarbose: "No", miglitol: "No",troglitazone: "No", tolazamide: "No", examide: "No", citoglipton: "No", insulin: "No", glyburide_metformin: "No", glipizide_metformin: "No", glimepiride_pioglitazone: "No", metformin_rosiglitazone: "No", metformin_pioglitazone: "No", change: "No", diabetesMed: "Yes", readmitted: "NO", _diag_1: "Injury and poisoning", _diag_2: "Diabetes mellitus", _diag_3: "Diseases of the circulatory system"},
@@ -30,6 +43,19 @@ export class JournalComponent implements OnInit {
     this.components.forEach(medicineComponents => {
       medicineComponents.resetField();
     })
+  }
+
+  public postPrescription(patient: Patient) {
+    this.http.post(this.url, {
+      patient
+    }).subscribe(predictionJSON => {
+    const prediction = 42;
+      this.prescriptionPostedSource.next(prediction);
+    })
+  }
+
+  private predictionReceived(prediction: number) {
+    console.log(prediction);
   }
 
 

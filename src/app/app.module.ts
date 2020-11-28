@@ -12,7 +12,14 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SplashComponent } from './splash/splash.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { RouterModule, Routes } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http';
 
+
+const routes = [
+  { path: '', component: SplashComponent },
+  { path: 'play', component: GameComponent },
+]
 
 @NgModule({
   declarations: [
@@ -24,12 +31,14 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatDividerModule,
     MatButtonModule,
     MatButtonToggleModule,
-    ScrollingModule
+    ScrollingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
