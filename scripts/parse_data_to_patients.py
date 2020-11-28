@@ -11,6 +11,7 @@ def main(data_file, output_file):
     names = load_names()
     with open(data_file) as fp_in:
         reader = csv.reader(fp_in)
+        next(reader) # skip header
         with open(output_file, 'w') as fp_out:
             fp_out.write("patients: Array<Patient> = [\n")
             for line in reader:
