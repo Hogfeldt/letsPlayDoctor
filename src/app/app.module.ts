@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
@@ -10,6 +11,8 @@ import { JournalComponent } from './journal/journal.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SplashComponent } from './splash/splash.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { SplashComponent } from './splash/splash.component';
     BrowserAnimationsModule,
     MatGridListModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatButtonToggleModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

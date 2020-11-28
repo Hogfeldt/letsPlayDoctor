@@ -1,1 +1,15 @@
-<p>Name: {{this.name}}</p>
+
+<div style="display: flex;">
+    <div style="width: 200px;">
+        <label><b>{{name}}</b></label>
+    </div>
+    <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold">No</mat-button-toggle>
+            <mat-button-toggle value="italic">Less</mat-button-toggle>
+            <mat-button-toggle value="underline">Steady</mat-button-toggle>
+            <mat-button-toggle value="underline">More</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    
+</div>

@@ -1,6 +1,6 @@
 <div style="padding: 25px;"> 
 
-    <mat-grid-list cols="2" rowHeight="1:1" style="border-style: solid; border-width: 1px; border-color: lightgray; border-radius: 10px; background-color: #F8F8F8;">
+    <mat-grid-list cols="3" rowHeight="1:1.4" style="border-style: solid; border-width: 1px; border-color: lightgray; border-radius: 10px; background-color: #F8F8F8;">
         <mat-grid-tile>
             <div style="height: 99%;">
                 <h1>Journal</h1>
@@ -26,9 +26,36 @@
         <mat-grid-tile>
             <div style="height: 99%;">
                 <h1>Prescription</h1>
+                <mat-divider></mat-divider><br>
+                <app-medicine [name]="'metformin '"></app-medicine>
+                <app-medicine [name]="'repaglinide '"></app-medicine>
+                <app-medicine [name]="'nateglinide '"></app-medicine>
+                <app-medicine [name]="'chlorpropamide '"></app-medicine>
+                <app-medicine [name]="'glimepiride '"></app-medicine>
+                <app-medicine [name]="'acetohexamide '"></app-medicine>
+                <app-medicine [name]="'glipizide '"></app-medicine>
+                <app-medicine [name]="'tolbutamide '"></app-medicine>
+                <app-medicine [name]="'pioglitazone '"></app-medicine>
+                <app-medicine [name]="'rosiglitazone '"></app-medicine>
+                <app-medicine [name]="'acarbose '"></app-medicine>
+            </div>
+        </mat-grid-tile>
 
-                
-                <mat-divider></mat-divider>
+        <mat-grid-tile>
+            <div style="height: 99%;">
+                <h1 style="color: transparent;">Prescription</h1>
+                <mat-divider></mat-divider><br>
+                <app-medicine [name]="'miglitol '"></app-medicine>
+                <app-medicine [name]="'troglitazone '"></app-medicine>
+                <app-medicine [name]="'tolazamide '"></app-medicine>
+                <app-medicine [name]="'examide '"></app-medicine>
+                <app-medicine [name]="'citoglipton '"></app-medicine>
+                <app-medicine [name]="'insulin '"></app-medicine>
+                <app-medicine [name]="'glyburide-metformin '"></app-medicine>
+                <app-medicine [name]="'glipizide-metformin '"></app-medicine>
+                <app-medicine [name]="'glimepiride-pioglitazone '"></app-medicine>
+                <app-medicine [name]="'metformin-rosiglitazone '"></app-medicine>
+                <app-medicine [name]="'metformin-pioglitazone '"></app-medicine>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
