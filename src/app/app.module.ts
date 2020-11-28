@@ -9,6 +9,7 @@ import { GameComponent } from './game/game.component';
 import { JournalComponent } from './journal/journal.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GameComponent,
     JournalComponent,
     MedicineComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
