@@ -56,6 +56,8 @@
                 <app-medicine [name]="'glimepiride-pioglitazone '" [dosis]="patient.glimepiride_pioglitazone" (dosisChange)="patient.glimepiride_pioglitazone=$event"></app-medicine>
                 <app-medicine [name]="'metformin-rosiglitazone '" [dosis]="patient.metformin_rosiglitazone" (dosisChange)="patient.metformin_rosiglitazone=$event"></app-medicine>
                 <app-medicine [name]="'metformin-pioglitazone '" [dosis]="patient.metformin_pioglitazone" (dosisChange)="patient.metformin_pioglitazone=$event"></app-medicine>
+                <br>
+                <button mat-raised-button style="float: right;" color="accent" (click)="fun();">Happy fun time!</button>
             </div>
         </mat-grid-tile>
     </mat-grid-list>

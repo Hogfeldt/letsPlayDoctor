@@ -48,6 +48,13 @@ export class JournalComponent implements OnInit {
     })
   }
 
+  public async fun(): Promise<void> {
+    console.log("fun time!");
+    this.components.forEach(medicineComponents => {
+      medicineComponents.dosis = "Up";
+    })
+  }
+
   public postPrescription(patient: Patient) {
     this.http.post(this.url, {
       patient
@@ -56,14 +63,15 @@ export class JournalComponent implements OnInit {
       this.prescriptionPostedSource.next(prediction);
     })
 
-    console.log("test");
-    this.patient = this.patients[Math.floor(Math.random() * Math.floor(8))];
-    this.oldPatient = JSON.parse(JSON.stringify(this.patient));
-    this.resetFields();
+    
   }
 
   private predictionReceived(prediction: number) {
-    console.log(prediction);
+    this.patient = this.patients[Math.floor(Math.random() * Math.floor(8))];
+    this.oldPatient = JSON.parse(JSON.stringify(this.patient));
+    this.resetFields();
+    this.scoreService.scorePoints(prediction);
+
     this.router.navigateByUrl("/results/" + prediction)
   }
 
