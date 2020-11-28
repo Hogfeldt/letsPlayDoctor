@@ -1,6 +1,40 @@
-<div>
-    <p><b>name: </b>{{patient.name}}</p>
-    <p><b>age: </b>{{patient.age}}</p>
-    <p><b>sex: </b>{{patient.sex}}</p>
-    <p><b>race: </b>{{patient.race}}</p>
+<div style="padding: 25px;"> 
+
+    <mat-grid-list cols="2" rowHeight="1:1" style="border-style: solid; border-width: 1px; border-color: lightgray; border-radius: 10px; background-color: #F8F8F8;">
+        <mat-grid-tile>
+            <div style="height: 99%;">
+                <h1>Journal</h1>
+                <mat-divider></mat-divider>
+
+                <p><b>name: </b>{{patient.name}}</p>
+                <p><b>age: </b>{{patient.age}}</p>
+                <p><b>sex: </b>{{patient.gender}}</p>
+                <p><b>race: </b>{{patient.race}}</p>
+                <mat-divider></mat-divider>
+                <p><b>Previous outpatient visits: </b>{{patient.number_outpatient}}</p>
+                <p><b>Previous emergency visits: </b>{{patient.number_emergency}}</p>
+                <p><b>Previous inpatient visits: </b>{{patient.number_inpatient}}</p>
+                <mat-divider ></mat-divider>
+                <p><b>max_glu_serum: </b>{{patient.max_glu_serum}}</p>
+                <p><b>A1Cresult: </b>{{patient.A1Cresult}}</p>
+                <mat-divider ></mat-divider>
+                <p><b>Primary diagnosis: </b>{{patient._diag_1}}</p>
+                <p><b>Secondary diagnosis: </b>{{patient._diag_2}}</p>
+                <p><b>Additional diagnosis: </b>{{patient._diag_3}}</p>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div style="height: 99%;">
+                <h1>Prescription</h1>
+
+                
+                <mat-divider></mat-divider>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <section style="float: right;">
+        <button mat-raised-button>Reset</button>
+        <button mat-raised-button color="primary">prescribe the drugs</button>
+    </section>
 </div>

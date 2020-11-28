@@ -2,12 +2,14 @@
 
 export interface Patient {
     name: string,
-    age: number,
-    sex: string,
     race: string,
+    gender: string,
+    age: number,
+    time_in_hospital: number,
     number_outpatient: number,
     number_emergency: number,
     number_inpatient: number,
+    number_diagnoses: number,
     max_glu_serum: string,
     A1Cresult: string,
 
