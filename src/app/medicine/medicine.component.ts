@@ -10,7 +10,6 @@ export class MedicineComponent implements OnInit {
   @Input() dosis: string;
 
   constructor() {
-    this.name = "gg";
    }
 
   ngOnInit(): void {
