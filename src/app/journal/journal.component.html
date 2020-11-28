@@ -27,17 +27,17 @@
             <div style="height: 99%;">
                 <h1>Prescription</h1>
                 <mat-divider></mat-divider><br>
-                <app-medicine [name]="'metformin '"></app-medicine>
-                <app-medicine [name]="'repaglinide '"></app-medicine>
-                <app-medicine [name]="'nateglinide '"></app-medicine>
-                <app-medicine [name]="'chlorpropamide '"></app-medicine>
-                <app-medicine [name]="'glimepiride '"></app-medicine>
-                <app-medicine [name]="'acetohexamide '"></app-medicine>
-                <app-medicine [name]="'glipizide '"></app-medicine>
-                <app-medicine [name]="'tolbutamide '"></app-medicine>
-                <app-medicine [name]="'pioglitazone '"></app-medicine>
-                <app-medicine [name]="'rosiglitazone '"></app-medicine>
-                <app-medicine [name]="'acarbose '"></app-medicine>
+                <app-medicine [name]="'metformin '" [dosis]="patient.metformin"></app-medicine>
+                <app-medicine [name]="'repaglinide '" [dosis]="patient.repaglinide"></app-medicine>
+                <app-medicine [name]="'nateglinide '" [dosis]="patient.nateglinide"></app-medicine>
+                <app-medicine [name]="'chlorpropamide '" [dosis]="patient.chlorpropamide"></app-medicine>
+                <app-medicine [name]="'glimepiride '" [dosis]="patient.glimepiride"></app-medicine>
+                <app-medicine [name]="'acetohexamide '" [dosis]="patient.acetohexamide"></app-medicine>
+                <app-medicine [name]="'glipizide '" [dosis]="patient.glipizide"></app-medicine>
+                <app-medicine [name]="'tolbutamide '" [dosis]="patient.tolbutamide"></app-medicine>
+                <app-medicine [name]="'pioglitazone '" [dosis]="patient.pioglitazone"></app-medicine>
+                <app-medicine [name]="'rosiglitazone '" [dosis]="patient.rosiglitazone"></app-medicine>
+                <app-medicine [name]="'acarbose '" [dosis]="patient.acarbose"></app-medicine>
             </div>
         </mat-grid-tile>
 
@@ -45,23 +45,23 @@
             <div style="height: 99%;">
                 <h1 style="color: transparent;">Prescription</h1>
                 <mat-divider></mat-divider><br>
-                <app-medicine [name]="'miglitol '"></app-medicine>
-                <app-medicine [name]="'troglitazone '"></app-medicine>
-                <app-medicine [name]="'tolazamide '"></app-medicine>
-                <app-medicine [name]="'examide '"></app-medicine>
-                <app-medicine [name]="'citoglipton '"></app-medicine>
-                <app-medicine [name]="'insulin '"></app-medicine>
-                <app-medicine [name]="'glyburide-metformin '"></app-medicine>
-                <app-medicine [name]="'glipizide-metformin '"></app-medicine>
-                <app-medicine [name]="'glimepiride-pioglitazone '"></app-medicine>
-                <app-medicine [name]="'metformin-rosiglitazone '"></app-medicine>
-                <app-medicine [name]="'metformin-pioglitazone '"></app-medicine>
+                <app-medicine [name]="'miglitol '" [dosis]="patient.miglitol"></app-medicine>
+                <app-medicine [name]="'troglitazone '" [dosis]="patient.troglitazone"></app-medicine>
+                <app-medicine [name]="'tolazamide '" [dosis]="patient.tolazamide"></app-medicine>
+                <app-medicine [name]="'examide '" [dosis]="patient.examide"></app-medicine>
+                <app-medicine [name]="'citoglipton '" [dosis]="patient.miglitol"></app-medicine>
+                <app-medicine [name]="'insulin '" [dosis]="patient.insulin"></app-medicine>
+                <app-medicine [name]="'glyburide-metformin '" [dosis]="patient.glyburide_metformin"></app-medicine>
+                <app-medicine [name]="'glipizide-metformin '" [dosis]="patient.miglitol"></app-medicine>
+                <app-medicine [name]="'glimepiride-pioglitazone '" [dosis]="patient.glimepiride_pioglitazone"></app-medicine>
+                <app-medicine [name]="'metformin-rosiglitazone '" [dosis]="patient.metformin_rosiglitazone"></app-medicine>
+                <app-medicine [name]="'metformin-pioglitazone '" [dosis]="patient.metformin_pioglitazone"></app-medicine>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
 
     <section style="float: right;">
-        <button mat-raised-button>Reset</button>
+        <button mat-raised-button (click)="resetFields();">Reset</button>
         <button mat-raised-button color="primary">prescribe the drugs</button>
     </section>
 </div>

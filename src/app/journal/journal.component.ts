@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { MedicineComponent } from '../medicine/medicine.component';
 import { Patient } from '../patient';
 
 @Component({
@@ -19,12 +20,18 @@ export class JournalComponent implements OnInit {
     {name: "John", age: 60, gender: "Male", race: "Caucasian", time_in_hospital: 4, number_outpatient: 0, number_emergency: 0, number_inpatient: 0, number_diagnoses: 9, max_glu_serum: "None", A1Cresult: "None", metformin: "No", repaglinide: "No", nateglinide: "No", chlorpropamide: "No", glimepiride: "No", acetohexamide: "No", glipizide: "Down", glyburide: "No", tolbutamide: "No", pioglitazone: "Steady", rosiglitazone: "No", acarbose: "No", miglitol: "No",troglitazone: "No", tolazamide: "No", examide: "No", citoglipton: "No", insulin: "No", glyburide_metformin: "No", glipizide_metformin: "No", glimepiride_pioglitazone: "No", metformin_rosiglitazone: "No", metformin_pioglitazone: "No", change: "Ch", diabetesMed: "Yes", readmitted: ">30", _diag_1: "Diseases of the circulatory system", _diag_2: "Diseases of the circulatory system", _diag_3: "Other symptoms, signs, and ill-defined conditions"},
     ]
 
-  patient: Patient = this.patients[0];
+  patient: Patient = this.patients[7];
 
+  @ViewChildren(MedicineComponent) components:QueryList<MedicineComponent>;
 
+  public resetFields(): void {
+    alert("The reset button doesn't work :/");
 
+    this.components.forEach(medicineComponents => {
+      medicineComponents.resetField();
+    })
+  }
 
-  constructor() { }
 
   ngOnInit(): void {
   }
